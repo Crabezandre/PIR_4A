@@ -1,1 +1,5 @@
 snif/
+__pycache__/
+
+*.txt
+*.png
