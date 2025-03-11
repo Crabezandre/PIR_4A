@@ -1,0 +1,76 @@
+{
+  "path2ms" : "./",
+  "scenarios" : [
+  {"ms_command":"ms 2 100000 -T -L -I 3 2 0 0 10",
+    "label":"Stationnary n-island with n=3 and M=10",
+    "color": "blue",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 1
+  },
+  {"ms_command":"ms 2 100000 -T -L -I 3 2 0 0 10 -eM 0.5 1",
+    "label":"Non-stationnary n-island with n=3, M=10 and at T=1000y M=1",
+    "color": "orange",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 1
+  }],
+  "theoretical_IICR_nisland" : [
+    {"n": 3,
+    "M": 10,
+    "sampling_same_island": 1,
+    "label": "Theoretical IICR stationary n-island with n=3 M=10",
+    "color": "blue",
+    "linestyle": "--",
+    "linewidth": 1,
+    "alpha": 1
+  },
+  {"n": 3,
+  "M": [10, 1],
+  "tau": [0.0, 1],
+  "size": [1.0, 1.0],
+  "sampling_same_island": 1,
+  "label": "Theoretical IICR non-stationnary n-island with n=3, M=10 and at T=1000y M=1",
+  "color": "orange",
+  "linestyle": "--",
+  "linewidth": 1,
+  "alpha": 1
+  }],
+  "peicewise_constant_functions":[
+  ],
+  "computation_parameters" : {
+    "x_vector_type": "log",
+    "start": 0,
+    "end": 100,
+    "number_of_values": 64,
+    "pattern": "4*1+25*2+4+6"
+    },
+  "custom_x_vector": {
+  "set_custom_xvector": 0,
+  "x_vector": 0
+  },
+  "scale_params":{
+  "N0": 500,
+  "generation_time": 1
+  },
+  "plot_params":{
+    "plot_theor_IICR": 1,
+    "plot_real_ms_history": 0,
+    "plot_limits": [1e1, 1e5, 1, 5e3],
+    "plot_title": "IICR of simulated n-island models",
+    "plot_xlabel": "Time (years)",
+    "plot_ylabel": "IICR",
+    "show_plot": 1,
+    "save_figure": 1
+  },
+  "number_of_repetitions": {
+  "n_rep": 1
+  },
+  "vertical_lines":[],
+  "plot_densities": {
+  "densities_to_plot": [],
+  "x_lim": [0.05, 2],
+  "y_lim": [0, 0.5]
+  },
+  "save_IICR_as_file":1
+}

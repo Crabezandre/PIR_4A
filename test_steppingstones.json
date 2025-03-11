@@ -1,0 +1,69 @@
+{"theoretical_IICR_nisland" : [],
+  "theoretical_IICR_general" : [
+    {"M": [[[0,5,0],[5,0,5],[0,5,0]]],
+    "tau": [0],
+    "sampling": [2,0,0],
+    "size":[[1,1,1]],
+    "label": "Theor. IICR for n=3 and M=10, s1",
+    "color": "blue",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 0.5
+    },
+    {"M": [[[0,5,0],[5,0,5],[0,5,0]]],
+    "tau": [0],
+    "sampling": [0,2,0],
+    "size":[[1,1,1]],
+    "label": "Theor. IICR for n=3 and M=10, s2",
+    "color": "forestgreen",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 0.5
+    },
+    {"M": [[[0,5,0],[5,0,5],[0,5,0]], [[0,0.5,0],[0.5,0,0.5],[0,0.5,0]]],
+    "tau": [0, 1],
+    "sampling": [2,0,0],
+    "size":[[1,1,1], [1,1,1]],
+    "label": "Theor. IICR for n=3 and M=10 then M=1, s1",
+    "color": "orange",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 0.5
+    },
+    {"M": [[[0,5,0],[5,0,5],[0,5,0]], [[0,0.5,0],[0.5,0,0.5],[0,0.5,0]]],
+    "tau": [0, 1],
+    "sampling": [0,2,0],
+    "size":[[1,1,1], [1,1,1]],
+    "label": "Theor. IICR for n=3 and M=10 then M=1, s2",
+    "color": "red",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 0.5
+      }
+  ],
+  "piecewise_constant_functions":[],
+  "computation_parameters" : {
+    "x_vector_type": "log",
+    "start": 0,
+    "end": 100,
+    "number_of_values": 64,
+    "pattern": "4*1+25*2+4+6"
+    },
+  "custom_x_vector": {
+  "set_custom_xvector": 0,
+  "x_vector": 0
+  },
+  "scale_params":{
+  "N0": 500,
+  "generation_time": 1
+  },
+  "plot_params":{
+    "plot_theor_IICR": 1,
+    "plot_limits": [1e1, 1e6, 1, 7e3],
+    "plot_xlabel": "Time (years) ",
+    "plot_ylabel": "IICR(t)"
+  },
+  "save_theor_IICR_as_file": 1,
+  "vertical_lines":[]
+
+}

@@ -1,0 +1,67 @@
+{
+  "path2ms" : "./",
+  "scenarios" : [
+  {"ms_command":"ms 2 100000 -T -L -I 3 2 0 0 -ma x 5 0 5 x 5 0 5 x",
+    "label":"Station. stepping-stone, n=1x3 and Mij=5, sampled in 1",
+    "color": "blue",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 1
+  },
+  {"ms_command":"ms 2 100000 -T -L -I 3 0 2 0 -ma x 5 0 5 x 5 0 5 x",
+    "label":"Station. stepping-stone, n=1x3 and Mij=5, sampled in 2",
+    "color": "green",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 1
+  },
+  {"ms_command":"ms 2 100000 -T -L -I 3 2 0 0 -ma x 5 0 5 x 5 0 5 x -ema 0.5 3 x 0.5 0 0.5 x 0.5 0 0.5 x",
+    "label":"Non-station. stepping-stone, n=1x3 and Mij=5, then at T=1000ya Mij=0.5, sampled in 1",
+    "color": "orange",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 1
+  },
+  {"ms_command":"ms 2 100000 -T -L -I 3 0 2 0 -ma x 5 0 5 x 5 0 5 x -ema 0.5 3 x 0.5 0 0.5 x 0.5 0 0.5 x",
+    "label":"Non-station. stepping-stone, n=1x3 and Mij=5, then at T=1000ya Mij=0.5, sampled in 2",
+    "color": "red",
+    "linestyle": "-",
+    "linewidth": 1,
+    "alpha": 1
+  }],
+  "computation_parameters" : {
+    "x_vector_type": "log",
+    "start": 0,
+    "end": 100,
+    "number_of_values": 64,
+    "pattern": "4*1+25*2+4+6"
+    },
+  "custom_x_vector": {
+  "set_custom_xvector": 0,
+  "x_vector": 0
+  },
+  "scale_params":{
+  "N0": 500,
+  "generation_time": 1
+  },
+  "plot_params":{
+    "plot_theor_IICR": 0,
+    "plot_real_ms_history": 0,
+    "plot_limits": [1e1, 1e5, 1, 5e3],
+    "plot_title": "IICR of simulated stepping-stone models",
+    "plot_xlabel": "Time (years)",
+    "plot_ylabel": "IICR",
+    "show_plot": 1,
+    "save_figure": 1
+  },
+  "number_of_repetitions": {
+  "n_rep": 1
+  },
+  "vertical_lines":[],
+  "plot_densities": {
+  "densities_to_plot": [],
+  "x_lim": [0.05, 2],
+  "y_lim": [0, 0.5]
+  },
+  "save_IICR_as_file":1
+}
