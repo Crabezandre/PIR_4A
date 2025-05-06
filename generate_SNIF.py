@@ -576,7 +576,7 @@ if __name__ == "__main__":
     parser.add_argument('--snif_output_dir', type=str, default='.', help='Dossier de sortie pour les fichiers SNIF, par défaut "." - répertoire actuel')
     parser.add_argument('--migration_rates', type=float, nargs='+', default=[0.1, 0.5, 1, 5, 10], help='Taux de migration, par défaut [0.1, 0.5, 1, 5, 10]')
     parser.add_argument('--N0', type=int, default=100, help='Taille de la population de référence, par défaut 100')
-    parser.add_argument('--taille', type=int, default=10, help='Longueur maximale des matrices, par défaut 10 (donc taille max = 10*10)')
+    parser.add_argument('--taille', type=int, default=8, help='Longueur maximale des matrices, par défaut 8 (donc taille max = 8*8)')
     parser.add_argument('--generation_time', type=int, default=1, help='Temps de génération en années, par défaut 1')
     parser.add_argument('--mu', type=float, default=1e-8, help='Taux de mutation par site et par génération, par défaut 1e-8')
     parser.add_argument('--omega', type=float, nargs='+', default=[0.3, 0.5, 1], help='Distance parameter pour SNIF, par défaut [0.3, 0.5, 1]') 
