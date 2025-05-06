@@ -1,0 +1,120 @@
+\documentclass{standalone}
+
+%%%%% INPUT AND LANGUAGE %%%%%
+\usepackage[latin9]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{xspace}
+\usepackage[english]{babel}
+
+%%%%% GENERAL UTILITIES %%%%%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+%%%%% FONTS %%%%%
+\usepackage{cmbright}
+\usepackage[nomath]{lmodern}
+\usepackage{inconsolata}
+\usepackage{bm}
+\DeclareMathAlphabet{\mathsfit}{T1}{\sfdefault}{\mddefault}{\sldefault}
+\SetMathAlphabet{\mathsfit}{bold}{T1}{\sfdefault}{\bfdefault}{\sldefault}
+\newcommand{\mathbif}[1]{\bm{\mathsfit{#1}}}
+
+%%%%% DRAWINGS %%%%%
+\usepackage{tikz}
+\usetikzlibrary{
+    calc,
+    patterns
+}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{
+    colorbrewer
+}
+
+\pgfplotsset{
+    compat = 1.15,
+    every tick/.append style = {black, thick},
+    label style = {minimum height = 1pc},
+    legend image code/.code = {
+        \draw [mark repeat = 2, mark phase = 2]
+            plot coordinates {
+                (0cm,0cm)
+                (0cm,0cm)
+                (0.5cm,0cm)
+            };
+    },
+}
+
+%%%%% CUSTOM DEFINITIONS %%%%%
+\def\mainsource{250503-015430_c01YN_dA_w100_SQ_2007_curves.dat}
+\def\plotwidth{13cm}
+\def\plotheight{6cm}
+\def\xlabel{Time in years (1 y/gen)}
+\def\xlowerlimit{1}
+\def\xupperlimit{20000000.0}
+\def\yupperlimit{300000}
+\def\xlowerdistancelimit{1}
+\def\xupperdistancelimit{20000000.0}
+\def\mylabelsep{8mm}
+
+\begin{document}%
+\begin{tikzpicture}[
+    /pgfplots/scale only axis,
+    /pgfplots/width=\plotwidth,
+    /pgfplots/height=\plotheight
+    ]%
+    \pgfplotstableread{\mainsource}\data
+    \begin{axis}[
+        axis on top=true,
+        inner sep = 0,
+        outer sep = 0,
+        xlabel = \xlabel,
+        ylabel = {IICR},
+        y label style = {at={($(axis description cs:0,0.5) + (-\mylabelsep,0mm)$)}},
+        xmode = log,
+        ymode = normal,
+        line width = 1pt,
+        legend cell align = left,
+        legend style = {at = {(0, 1)}, anchor = north west, font=\footnotesize},
+        anchor = north west,
+        tickwidth = {5pt},
+        xtick align = outside,
+        ytick align = outside,
+        xmin = \xlowerlimit,
+        xmax = \xupperlimit,
+        ymin = 0,
+        ymax = \yupperlimit,
+        x axis line style = -,
+        y axis line style = -,
+      ]
+
+      \fill[pattern=north east lines, pattern color = black!15]
+        (\xlowerlimit, 0) rectangle (\xlowerdistancelimit, \yupperlimit)
+        (\xupperdistancelimit, 0) rectangle (\xupperlimit, \yupperlimit);
+
+      \foreach \t in {}
+        \addplot[Set1-B, ultra thick, draw opacity=0.2, forget plot] coordinates {(\t, 0) (\t, \yupperlimit)};
+
+      \foreach \t in {}
+        \addplot[Set1-A, ultra thick, draw opacity=0.2, forget plot] coordinates {(\t, 0) (\t, \yupperlimit)};
+
+      \foreach \plotid in {1,2,3,4,5} {
+          \addplot[const plot, ultra thick, Set1-B] table [x = time-\plotid, y = source-iicr-\plotid] {\data};
+          \addplot[const plot, ultra thick, Set1-A] table [x = time-\plotid, y = inferred-iicr-\plotid] {\data};
+      }
+
+      \legend{
+        Source\\
+        Inferred\\
+      }
+
+    \end{axis}
+\end{tikzpicture}%
+\end{document} 

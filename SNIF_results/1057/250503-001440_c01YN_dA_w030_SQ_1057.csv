@@ -1,0 +1,7 @@
+SEP=,
+id,d_omega,d_visual,rounds,evaluations,failed evals,duration,inf. n,inf. t0,inf. M0,inf. s0,inf. N_ref,source filename
+1,17989.5,83205.1,5,66707,0,119.959,5,0,1.27214,1,361.976,./Generate_PSMC/sim_0353.psmc
+2,17992.6,83338.1,5,73227,0,252.502,5,0,1.27763,1,362.559,./Generate_PSMC/sim_0353.psmc
+3,17993.4,83080.6,5,68622,0,375.451,5,0,1.26759,1,361.492,./Generate_PSMC/sim_0353.psmc
+4,17991.2,83161.7,5,69612,0,499.788,5,0,1.27025,1,361.776,./Generate_PSMC/sim_0353.psmc
+5,17989.9,83251.2,5,66182,0,621.955,5,0,1.27368,1,362.14,./Generate_PSMC/sim_0353.psmc
